@@ -1,0 +1,7 @@
+Medico 2017, 2018, 2020 and 2021 (GI image analyzis)
+Medico 2019 and 2022 (AI reproduction)
+ImageCLEF 2017, 2018, 2019 and 2020 (LifeLogging)
+EndoTect 2020 (GI image analyzis)
+Nora FishAI 2022 (sustainable fishing)
+BioMedia 2019 (GI image analysis)
+BioMedia 2020 (AI reproduction)

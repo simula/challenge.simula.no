@@ -1,32 +1,21 @@
 import { useContext } from 'react'
+import { FiSearch } from 'react-icons/fi'
 import { SearchContext } from '../context/search'
 
 export default function SearchAndFilter() {
     const { value, setValue } = useContext(SearchContext)
 
     return (
-        <div className="mt-6">
-            <div className="border-1 mx-auto flex h-10 w-96 items-center rounded-xl border-gray-600 bg-slate-200 px-1 focus-within:outline focus-within:outline-2 focus-within:outline-black">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="ml-2 inline-block h-7 w-7"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="gray"
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="1.5"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                </svg>
-                <input
-                    onChange={val => setValue(val.target.value)}
-                    value={value}
-                    className="h-8 w-64 grow border-none bg-slate-200 px-2 focus:outline-none"
-                />
-            </div>
+        <div className="mx-auto mt-2 mb-8 flex w-full max-w-md items-center gap-2 rounded-lg border border-gray-300 bg-white px-3 py-2 shadow-sm focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/30">
+            <FiSearch className="h-5 w-5 text-gray-400" aria-hidden="true" />
+            <input
+                type="search"
+                aria-label="Search challenges"
+                placeholder="Search challenges…"
+                onChange={e => setValue(e.target.value)}
+                value={value}
+                className="w-full border-none bg-transparent text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none"
+            />
         </div>
     )
 }
