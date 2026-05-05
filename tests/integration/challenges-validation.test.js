@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { describe, it, expect } from 'vitest'
+import { challengeFrontmatterSchema } from '../../src/utils/challenge-schema'
 
 const CHALLENGES_DIR = path.resolve(__dirname, '../../challenges')
 
@@ -14,17 +15,15 @@ describe('challenges/ frontmatter', () => {
         expect(files.length).toBeGreaterThan(0)
     })
 
-    it.each(files)('%s has required frontmatter fields', file => {
+    it.each(files)('%s passes the frontmatter schema', file => {
         const raw = fs.readFileSync(path.join(CHALLENGES_DIR, file), 'utf-8')
         const { data } = matter(raw)
-
-        expect(data.title, 'missing title').toEqual(expect.any(String))
-        expect(data.title.length).toBeGreaterThan(0)
-
-        expect(data.desc, 'missing desc').toEqual(expect.any(String))
-        expect(data.desc.length).toBeGreaterThan(0)
-
-        expect(data.link, 'missing link').toEqual(expect.any(String))
-        expect(data.link).toMatch(/^https?:\/\//)
+        const result = challengeFrontmatterSchema.safeParse(data)
+        if (!result.success) {
+            const issues = result.error.issues
+                .map(i => `  - ${i.path.join('.') || '(root)'}: ${i.message}`)
+                .join('\n')
+            throw new Error(`Schema validation failed for ${file}:\n${issues}`)
+        }
     })
 })

@@ -6,7 +6,7 @@ export default function Layout({ children }) {
         <div className="flex min-h-screen flex-col">
             <a
                 href="#main-content"
-                className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:text-primary"
+                className="focus:text-primary sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:px-4 focus:py-2"
             >
                 Skip to main content
             </a>
@@ -15,26 +15,26 @@ export default function Layout({ children }) {
                     <Link
                         href="/"
                         aria-label="Simula Challenges home"
-                        className="inline-flex items-center text-xl font-semibold tracking-tight text-white focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary sm:text-2xl"
+                        className="focus-visible:ring-offset-primary inline-flex items-center text-xl font-semibold tracking-tight text-white focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 sm:text-2xl"
                     >
                         simula challenges
                     </Link>
                     <div className="flex items-center gap-5 text-sm font-medium text-white">
                         <a
                             href="https://www.simula.no"
-                            className="hidden hover:underline focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary sm:inline"
+                            className="focus-visible:ring-offset-primary hidden hover:underline focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 sm:inline"
                         >
                             Simula.no
                         </a>
                         <a
                             href="https://www.simulamet.no"
-                            className="hidden hover:underline focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary sm:inline"
+                            className="focus-visible:ring-offset-primary hidden hover:underline focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 sm:inline"
                         >
                             SimulaMet.no
                         </a>
                         <a
                             href="https://github.com/simula/challenge.simula.no"
-                            className="inline-flex items-center gap-1.5 hover:underline focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                            className="focus-visible:ring-offset-primary inline-flex items-center gap-1.5 hover:underline focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
                         >
                             <FaGithub size="1rem" aria-hidden="true" />
                             <span>Contribute</span>
@@ -51,7 +51,7 @@ export default function Layout({ children }) {
                         ©{' '}
                         <a
                             href="https://www.simula.no"
-                            className="hover:underline focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                            className="focus-visible:ring-offset-primary hover:underline focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
                         >
                             Simula Research Laboratory
                         </a>
@@ -59,14 +59,14 @@ export default function Layout({ children }) {
                     <div className="flex items-center gap-5">
                         <a
                             href="https://github.com/simula/challenge.simula.no"
-                            className="hover:underline focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                            className="focus-visible:ring-offset-primary hover:underline focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
                         >
                             Contribute a challenge
                         </a>
                         <a
                             href="https://github.com/simula/challenge.simula.no"
                             aria-label="View source code on GitHub"
-                            className="transition-opacity hover:opacity-80 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                            className="focus-visible:ring-offset-primary transition-opacity hover:opacity-80 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
                         >
                             <FaGithub size="1.25rem" />
                         </a>

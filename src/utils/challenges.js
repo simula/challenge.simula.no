@@ -1,5 +1,6 @@
 import fs from 'fs'
 import matter from 'gray-matter'
+import { validateFrontmatter } from './challenge-schema.js'
 
 const CHALLENGES_DIR = 'challenges'
 
@@ -20,7 +21,8 @@ export function loadAllChallenges() {
         const filepath = `${CHALLENGES_DIR}/${fileName}`
         const raw = fs.readFileSync(filepath, 'utf-8')
         const stats = fs.statSync(filepath)
-        const { data: frontmatter } = matter(raw)
+        const { data: rawFrontmatter } = matter(raw)
+        const frontmatter = validateFrontmatter(slug, rawFrontmatter)
         frontmatter.mtime = stats.mtime.toISOString()
         return { slug, frontmatter }
     })

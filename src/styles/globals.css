@@ -1,9 +1,11 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary: #f15d22;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --color-primary: #25b037;
+    --font-sans:
+        var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+        sans-serif;
 }
 
 /*
@@ -12,16 +14,11 @@
   looks the same as it did with Tailwind CSS v3.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
-}
-
-html,
-body {
-    background-color: #f15d22;
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
 }

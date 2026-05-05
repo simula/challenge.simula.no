@@ -18,10 +18,9 @@ describe('loadAllChallenges', () => {
 
     it('attaches an ISO mtime to every entry', () => {
         for (const { slug, frontmatter } of challenges) {
-            expect(
-                frontmatter.mtime,
-                `${slug} is missing mtime`
-            ).toMatch(/^\d{4}-\d{2}-\d{2}T/)
+            expect(frontmatter.mtime, `${slug} is missing mtime`).toMatch(
+                /^\d{4}-\d{2}-\d{2}T/
+            )
         }
     })
 
